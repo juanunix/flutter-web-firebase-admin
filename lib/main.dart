@@ -23,25 +23,6 @@ class FirebaseApp extends StatelessWidget {
   }
 }
 
-_startFilePicker() async {
-  InputElement uploadInput = FileUploadInputElement();
-  uploadInput.click();
-
-  uploadInput.onChange.listen((e) {
-    // read file content as dataURL
-    final files = uploadInput.files;
-    if (files.length == 1) {
-      final file = files[0];
-      final reader = FileReader();
-
-      reader.onLoadEnd.listen((e) {
-        // _handleResult(reader.result);
-      });
-      reader.readAsDataUrl(file);
-    }
-  });
-}
-
 class FirebaseHome extends StatefulWidget {
   @override
   _FirebaseHomeState createState() => _FirebaseHomeState();
